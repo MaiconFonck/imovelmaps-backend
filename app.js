@@ -22,8 +22,14 @@ app.use('/api', routes);       // Todas as rotas autenticadas e protegidas
 // Middleware global de tratamento de erros (deve ser o último)
 app.use(errorHandler);
 
+// 👇 ROTA DE BOAS-VINDAS
 app.get('/', (req, res) => {
-  res.status(200).send('🚀 ImovelMaps API está online!');
+  res.send('🚀 ImovelMaps API está online!');
+});
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
 
 module.exports = app;
