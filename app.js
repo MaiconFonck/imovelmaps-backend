@@ -22,4 +22,8 @@ app.use('/api', routes);       // Todas as rotas autenticadas e protegidas
 // Middleware global de tratamento de erros (deve ser o último)
 app.use(errorHandler);
 
+app.get('/', (req, res) => {
+  res.status(200).send('🚀 ImovelMaps API está online!');
+});
+
 module.exports = app;
